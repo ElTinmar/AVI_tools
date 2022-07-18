@@ -1,5 +1,9 @@
 # AVI_tools
 
+# View motion vectors
+
+ffplay -flags2 +export_mvs input.avi -vf codecview=mv=pf+bf+bb
+
 # Cool stuff
 
 ```
