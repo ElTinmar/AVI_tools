@@ -124,3 +124,11 @@ I think this works only for I-frames.
 dd skip=5686 count=13087 bs=1 if=~/Desktop/forEmi/2021_07_26_B.avi of=test.h264
 ffplay -i test.h264
 ```
+You can check that there is the NAL unit at the beginning
+
+```
+$ hexdump -C test.h264 -n 48  
+00000000  00 00 00 01 67 42 c0 29  8c 8d 40 c0 52 40 3c 22  |....gB.)..@.R@<"|  
+00000010  11 a8 00 00 00 01 68 ce  3c 80 00 00 00 01 65 b8  |......h.<.....e.|  
+00000020  00 04 00 00 7e ff cb 6f  71 20 07 1c 18 0d 13 00  |....~..oq ......|  
+```
