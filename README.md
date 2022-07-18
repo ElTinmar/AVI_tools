@@ -116,7 +116,9 @@ First we need to convert to decimal
 0x0000162e = 5678  
 0x0000331f = 13087  
 
-We need to add an offset of 8 bytes to the start to remove the chunk ID ('00dc') and size : 5678 + 8 = 5686
+We need to add an offset of 8 bytes to the start to remove the chunk ID ('00dc') and size : 5678 + 8 = 5686.
+Now we can extract the x264 data with the dd command reading each byte (bs=1).
+I think this works only for I-frames.
 
 ```
 dd skip=5686 count=13087 bs=1 if=~/Desktop/forEmi/2021_07_26_B.avi of=test.h264
