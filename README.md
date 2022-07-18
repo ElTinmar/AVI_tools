@@ -8,7 +8,7 @@ showriff input.avi
 ```
 
 ```
-Contents of file /home/martin/Desktop/forEmi/2021_07_26_B.avi (7303152568/0x303152568 bytes):
+Contents of file input.avi (7303152568/0x303152568 bytes):
 
 (0x00000000)       ID:<RIFF>   Size: 0x40332b16
                    Form Type = <AVI >
@@ -108,4 +108,17 @@ Contents of file /home/martin/Desktop/forEmi/2021_07_26_B.avi (7303152568/0x3031
 (0x00045b5a)               ID:<00dc>   Size: 0x00001785
 (0x000472e8)               ID:<00dc>   Size: 0x000021a3
 (0x00049494)               ID:<00dc>   Size: 0x0000219a
+```
+Now let's extract the first h264 encoded frame.  
+First we need to convert to decimal
+
+(0x0000162e)               ID:<00dc>   Size: 0x0000331f  
+0x0000162e = 5678  
+0x0000331f = 13087  
+
+We need to add an offset of 8 bytes to the start to remove the chunk ID ('00dc') and size : 5678 + 8 = 5686
+
+```
+dd skip=5686 count=13087 bs=1 if=~/Desktop/forEmi/2021_07_26_B.avi of=test.h264
+ffplay -i test.h264
 ```
