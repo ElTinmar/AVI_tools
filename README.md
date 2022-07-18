@@ -124,7 +124,7 @@ I think this works only for I-frames.
 dd skip=5686 count=13087 bs=1 if=~/Desktop/forEmi/2021_07_26_B.avi of=test.h264
 ffplay -i test.h264
 ```
-You can check that there is the NAL unit at the beginning
+You can check that there is the NAL unit (https://en.wikipedia.org/wiki/Network_Abstraction_Layer) at the beginning
 
 ```
 $ hexdump -C test.h264 -n 48  
