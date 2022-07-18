@@ -117,7 +117,7 @@ First we need to convert to decimal
 0x0000331f = 13087  
 
 We need to add an offset of 8 bytes to the start to remove the chunk ID ('00dc') and size : 5678 + 8 = 5686.
-Now we can extract the x264 data with the dd command reading each byte (bs=1).
+Now we can extract the h264 data with the dd command reading each byte (bs=1).
 I think this works only for I-frames.
 
 ```
