@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
             endoffile = show_list(in,hd.length,&numframes);
         }
 	}
-    printf("#Frames: %d\n",numframes);
+    printf("%d\n",numframes);
 	return 0;
 }
 
