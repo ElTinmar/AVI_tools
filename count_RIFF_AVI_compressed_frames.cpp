@@ -3,7 +3,6 @@
 typedef unsigned char BYTE;
 typedef unsigned int DWORD;
 
-int GetLong(char *buf);
 int show_list(FILE *in, int length, int* numframes);
 
 class FourCC
@@ -102,25 +101,9 @@ void Chunk::skip(FILE *in)
 	fseek(in,nbytes,SEEK_CUR);
 }
 
-
-void Chunk::show()
-{
-	DWORD str[2];
-	str[0] = type.code;
-	str[1] = 0;
-	printf("%4s  %d\n",(char *)str,length);
-}
-
 int FourCC::read(FILE *in)
 {
 	fread((char *) &code,sizeof(FourCC),1,in);
 	return (feof(in)? -1: 0);
 }
 
-void FourCC::show()
-{
-	DWORD str[2];
-	str[0] = code;
-	str[1] = 0;
-	printf("code: %s\n",(char *)str);
-}
