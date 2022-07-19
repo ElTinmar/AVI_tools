@@ -377,6 +377,257 @@ $ ffmpeg -i test.h264 -c copy -bsf:v trace_headers -f null -
 [trace_headers @ 0x5582573dbb40] 68          slice_beta_offset_div2                                      1 = 0
 ```
 
+You can also use another nice tool
+
+```
+pip3 install h26x-extractor  
+h26x-extractor -v test.h264
+
+I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[1029, 1964]
+NALU offset:	1029 Bytes
+NALU length:	936 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x0000000165062e000100001ffd74cd7b880002143fda307a87721a0012d325b207d8d603c04c3889d7a860b98f1cc6602431bb765a080690b8678375b063f6d36c84787d5eef85f28405ad1045c0038ac9900a2a0180181b4186c49acb8b1f91152b336344d8c8e8aabbedd6e9274c3be39dff770d4603dc9a1014511f...
+NALU RBSP:	0x062e000100001ffd74cd7b880002143fda307a87721a0012d325b207d8d603c04c3889d7a860b98f1cc6602431bb765a080690b8678375b063f6d36c84787d5eef85f28405ad1045c0038ac9900a2a0180181b4186c49acb8b1f91152b336344d8c8e8aabbedd6e9274c3be39dff770d4603dc9a1014511f859c3d2274...
+
+CodedSliceIDR (payload size: 931.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 48      |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[1965, 2811]
+NALU offset:	1965 Bytes
+NALU length:	847 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x0000000165030b8000400007ffbfefb8e214d7a01a5dd00ef71f846e9f4b6d2981c8e82e9c7e1b3d9c387336036130904f1d389b040ed7fcff1eec4507567b6f49ef1f80fe5048d4ec0a3ce114e3ccc93984f8d31f9dc3a658674118315c963c9d7d8090905ffe2fcf7c84460060c58bce080313949eb5326bfe34f7bc...
+NALU RBSP:	0x030b8000400007ffbfefb8e214d7a01a5dd00ef71f846e9f4b6d2981c8e82e9c7e1b3d9c387336036130904f1d389b040ed7fcff1eec4507567b6f49ef1f80fe5048d4ec0a3ce114e3ccc93984f8d31f9dc3a658674118315c963c9d7d8090905ffe2fcf7c84460060c58bce080313949eb5326bfe34f7bcc1005805ea...
+
+CodedSliceIDR (payload size: 842.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 96      |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[2812, 3875]
+NALU offset:	2812 Bytes
+NALU length:	1064 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x00000001650122e000100001e10c26133c7a01fffb18fc087b86a998106c5ff402fbf12700fbed29b37303c0812d461a06ccfe3f00719793331736b7a9a458fca5f15ba344ed3b53c5fe40d0107bb486450ec6880870fea43f0a5fe6e759720a134158bc6e39190a6efcd1caf156d01588155096ca0e03d43ce16450e7...
+NALU RBSP:	0x0122e000100001e10c26133c7a01fffb18fc087b86a998106c5ff402fbf12700fbed29b37303c0812d461a06ccfe3f00719793331736b7a9a458fca5f15ba344ed3b53c5fe40d0107bb486450ec6880870fea43f0a5fe6e759720a134158bc6e39190a6efcd1caf156d01588155096ca0e03d43ce16450e714627940e2...
+
+CodedSliceIDR (payload size: 1059.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 144     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[3876, 5013]
+NALU offset:	3876 Bytes
+NALU length:	1138 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x00000001650182e000100001ffe91e83b8a03574044c9f627b1d00d7d3f5fdc4fbc3017dcc1c4200b013a0d876101f5c08ca2bfff97bcafdbeab37afa751244e170e9227359b8c24f40d053d00d4796a25f2fe5e7785c08808664b1c9bb0babe422293461c82999abe252a2186a93560a15f8fc6fafbe3c98451a16340...
+NALU RBSP:	0x0182e000100001ffe91e83b8a03574044c9f627b1d00d7d3f5fdc4fbc3017dcc1c4200b013a0d876101f5c08ca2bfff97bcafdbeab37afa751244e170e9227359b8c24f40d053d00d4796a25f2fe5e7785c08808664b1c9bb0babe422293461c82999abe252a2186a93560a15f8fc6fafbe3c98451a163406c080aa892...
+
+CodedSliceIDR (payload size: 1133.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 192     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[5014, 6149]
+NALU offset:	5014 Bytes
+NALU length:	1136 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x000000016501e2e000100001fffff8a8a0004f7a9bd8afffffefabd4696ccef267fe1a7a45711c200005dcbcdfbbaf8afd910ee97773fe876cb2c203c6a392d442c25aa2f4cb6d35bb983012a05c645e27f180417ca4250c0b0d80001241aabfe5dfdefa485000f84cc73246a745f0741071e000dafb78087c48518430...
+NALU RBSP:	0x01e2e000100001fffff8a8a0004f7a9bd8afffffefabd4696ccef267fe1a7a45711c200005dcbcdfbbaf8afd910ee97773fe876cb2c203c6a392d442c25aa2f4cb6d35bb983012a05c645e27f180417ca4250c0b0d80001241aabfe5dfdefa485000f84cc73246a745f0741071e000dafb78087c4851843018b4e9fd66...
+
+CodedSliceIDR (payload size: 1131.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 240     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[6150, 7782]
+NALU offset:	6150 Bytes
+NALU length:	1633 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x00000001650090b8000400007843059000103d96fffedfff712dee87ebf031d60a6cc371ff6e2307deac337acca28f2d4d4251589a0521f081defee2e3330b85e81b9543d2771457cf489d53e8b4aa195e1cf12a4a4cc1a1f8376ff4fb0c8c4973a654c9d7eedc506eda538402a4cd87d7373f8c531bbdc448af011be9...
+NALU RBSP:	0x0090b8000400007843059000103d96fffedfff712dee87ebf031d60a6cc371ff6e2307deac337acca28f2d4d4251589a0521f081defee2e3330b85e81b9543d2771457cf489d53e8b4aa195e1cf12a4a4cc1a1f8376ff4fb0c8c4973a654c9d7eedc506eda538402a4cd87d7373f8c531bbdc448af011be906c8d74b48...
+
+CodedSliceIDR (payload size: 1628.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 288     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[7783, 9376]
+NALU offset:	7783 Bytes
+NALU length:	1594 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x000000016500a8b8000400007ff8433c2e17abd84a0f36270f0ef2b927ab019d924b212eb87aa44bc226650776a2d781fa38c13ba65b1c642ef5b2f72e1ff681000667db8df38d9b06c671b31f8d24c5b05cb61ce0ff454c45ac947514e0ea177b2cd0ea9b70d998956b005862f18baa31abac2e2bfe4823bb170b3979...
+NALU RBSP:	0x00a8b8000400007ff8433c2e17abd84a0f36270f0ef2b927ab019d924b212eb87aa44bc226650776a2d781fa38c13ba65b1c642ef5b2f72e1ff681000667db8df38d9b06c671b31f8d24c5b05cb61ce0ff454c45ac947514e0ea177b2cd0ea9b70d998956b005862f18baa31abac2e2bfe4823bb170b3979740b593dd1...
+
+CodedSliceIDR (payload size: 1589.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 336     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[9377, 11145]
+NALU offset:	9377 Bytes
+NALU length:	1769 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x000000016500c0b8000400007f0bf0201856e2ac28a9248a90dc7f55ac933971655b4dc32917cc72450a21105cc8402a880c7df664c0a0c16eeaa660d4d9ca3dc712ed054ab7d81bb1aa5ac3da9d0a2f51c0389406fc85152be31bcd8111ca6e8fc88234a6a8b007c1ea5f38a5563aeb2479149a785e47d0411eee0001...
+NALU RBSP:	0x00c0b8000400007f0bf0201856e2ac28a9248a90dc7f55ac933971655b4dc32917cc72450a21105cc8402a880c7df664c0a0c16eeaa660d4d9ca3dc712ed054ab7d81bb1aa5ac3da9d0a2f51c0389406fc85152be31bcd8111ca6e8fc88234a6a8b007c1ea5f38a5563aeb2479149a785e47d0411eee0001a15458d12d...
+
+CodedSliceIDR (payload size: 1764.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 384     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+========================================================================================================
+
+NALU bytepos:	[11146, 13086]
+NALU offset:	11146 Bytes
+NALU length:	1941 Bytes (including start code)
+NALU type:	5 (Coded slice of an IDR picture)
+NALU bytes:	0x000000016500d8b8000400007f6777690c00c42e0e87c8ad4b09a21782b4cc4205dee69a486cba40c017909d4b540d02092b0e77a6d06b83b3dc96693dc559303135149614c10e4abcd192a5c6d2aa557642cc8965b56e8d77e4102e0970171776367b8b225ab227a941c24e2f537b21460792aa6b4658e3607a92dcb8...
+NALU RBSP:	0x00d8b8000400007f6777690c00c42e0e87c8ad4b09a21782b4cc4205dee69a486cba40c017909d4b540d02092b0e77a6d06b83b3dc96693dc559303135149614c10e4abcd192a5c6d2aa557642cc8965b56e8d77e4102e0970171776367b8b225ab227a941c24e2f537b21460792aa6b4658e3607a92dcb80480798ad2...
+
+CodedSliceIDR (payload size: 1936.0 Bytes)
++----------------------+---------+
+| field                | value   |
++======================+=========+
+| first_mb_in_slice    | 432     |
++----------------------+---------+
+| slice_type           | 2       |
++----------------------+---------+
+| slice_type_clear     | I       |
++----------------------+---------+
+| pic_parameter_set_id | 0       |
++----------------------+---------+
+| frame_num            | 0       |
++----------------------+---------+
+| idr_pic_id           | 1       |
++----------------------+---------+
+
+```
+
 ## Demuxing the whole AVI
 
 ```
