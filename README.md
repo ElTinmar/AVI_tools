@@ -1,10 +1,10 @@
 # AVI_tools
 
-# View motion vectors
+## View motion vectors
 
 ffplay -flags2 +export_mvs input.avi -vf codecview=mv=pf+bf+bb
 
-# Demuxing an AVI frame by frame by hand
+## Demuxing an AVI frame by frame by hand
 
 ```
 sudo apt install xawtv-tools  
@@ -137,7 +137,7 @@ $ hexdump -C test.h264 -n 48
 00000020  00 04 00 00 7e ff cb 6f  71 20 07 1c 18 0d 13 00  |....~..oq ......|  
 ```
 
-# Parse the h264 stream
+## Parse the h264 stream
 
 ```
 $ ffmpeg -i test.h264 -c copy -bsf:v trace_headers -f null -  
@@ -377,7 +377,7 @@ $ ffmpeg -i test.h264 -c copy -bsf:v trace_headers -f null -
 [trace_headers @ 0x5582573dbb40] 68          slice_beta_offset_div2                                      1 = 0
 ```
 
-# Demuxing the whole AVI
+## Demuxing the whole AVI
 
 ```
 ffmpeg -i input.avi -c:v copy output.h264
