@@ -125,7 +125,7 @@ Now we can extract the h264 data with the dd command reading each byte (bs=1).
 I think this works only for I-frames.
 
 ```
-dd skip=5686 count=13087 bs=1 if=~/Desktop/forEmi/2021_07_26_B.avi of=test.h264
+dd skip=5686 count=13087 bs=1 if=input.avi of=test.h264
 ffplay -i test.h264
 ```
 You can check that there is the NAL unit (https://www.itu.int/rec/T-REC-H.264) at the beginning
