@@ -376,3 +376,9 @@ $ ffmpeg -i test.h264 -c copy -bsf:v trace_headers -f null -
 [trace_headers @ 0x5582573dbb40] 67          slice_alpha_c0_offset_div2                                  1 = 0
 [trace_headers @ 0x5582573dbb40] 68          slice_beta_offset_div2                                      1 = 0
 ```
+
+To demux the whole AVI:
+
+```
+ffmpeg -i input.avi -c:v copy output.h264
+```
